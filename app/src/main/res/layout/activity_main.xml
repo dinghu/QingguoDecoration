@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.fkh.support.ui.widget.NoScrollViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabbar">
+
+    </com.fkh.support.ui.widget.NoScrollViewPager>
+
+    <LinearLayout
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_divide_line" />
+
+        <com.fkh.support.ui.widget.alphatab.AlphaTabsLayout
+            android:id="@+id/alphaIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+
+            <com.fkh.support.ui.widget.alphatab.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:badgeBackgroundColor="#ff0000"
+                app:paddingTexwithIcon="5dp"
+                app:tabIconNormal="@drawable/company_normal"
+                app:tabIconSelected="@drawable/company_blue"
+                app:tabText="首页"
+                app:tabTextSize="10sp"
+                app:textColorNormal="#808080"
+                app:textColorSelected="@color/colorTheme" />
+
+            <com.fkh.support.ui.widget.alphatab.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:badgeBackgroundColor="#ff0000"
+                app:paddingTexwithIcon="5dp"
+                app:tabIconNormal="@drawable/customer_normal"
+                app:tabIconSelected="@drawable/customer_blue"
+                app:tabText="聊天"
+                app:tabTextSize="10sp"
+                app:textColorNormal="#808080"
+                app:textColorSelected="@color/colorTheme" />
+
+            <com.fkh.support.ui.widget.alphatab.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+
+                app:badgeBackgroundColor="#ff0000"
+                app:paddingTexwithIcon="5dp"
+                app:tabIconNormal="@drawable/data_normal"
+                app:tabIconSelected="@drawable/data_blue"
+                app:tabText="数据"
+                app:tabTextSize="10sp"
+                app:textColorNormal="#808080"
+                app:textColorSelected="@color/colorTheme" />
+
+
+            <com.fkh.support.ui.widget.alphatab.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:badgeBackgroundColor="#ff0000"
+                app:paddingTexwithIcon="5dp"
+                app:tabIconNormal="@drawable/mine_normal"
+                app:tabIconSelected="@drawable/mine_blue"
+                app:tabText="我的"
+                app:tabTextSize="10sp"
+                app:textColorNormal="#808080"
+                app:textColorSelected="@color/colorTheme" />
+
+
+        </com.fkh.support.ui.widget.alphatab.AlphaTabsLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
