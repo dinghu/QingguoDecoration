@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <com.fkh.support.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:titleText="首页"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
@@ -17,134 +23,153 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
+                    android:layout_margin="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/corner_5_shape_gray"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="张三" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="分享微官网" />
-
+                    android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_home_head"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="张三"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/bg_fillet_border_black"
+                            android:text="分享微官网"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
 
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="20dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
 
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginBottom="18dp"
-                                android:layout_marginTop="7dp"
-                                android:text="浏览量"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="浏览量"
+                                    android:textColor="#666666"
+                                    android:textSize="12sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginBottom="18dp"
-                                android:layout_marginTop="7dp"
-                                android:text="0"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="7dp"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="粉丝数"
+                                    android:textColor="#666666"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="7dp"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="客户预约数"
+                                    android:textColor="#666666"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="7dp"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
 
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginBottom="18dp"
-                                android:layout_marginTop="7dp"
-                                android:text="粉丝数"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginBottom="18dp"
-                                android:layout_marginTop="7dp"
-                                android:text="0"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginBottom="18dp"
-                                android:layout_marginTop="7dp"
-                                android:text="客户预约数"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginBottom="18dp"
-                                android:layout_marginTop="7dp"
-                                android:text="0"
-                                android:textColor="#666666"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-
                     </LinearLayout>
-                </LinearLayout>
+
+                    <ImageView
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/icon_head2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="15dp"
                     android:text="公司管理"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -154,17 +179,22 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/head"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_compay_1"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
+
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
                             android:text="公司设置"
                             android:textColor="#666666"
@@ -180,18 +210,21 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_compay_2"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
+
                             android:text="公司信息"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -206,18 +239,22 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_compay_3"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
+
                             android:text="成员管理"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -232,18 +269,22 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_compay_4"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
+
                             android:text="绑定微信"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -252,17 +293,24 @@
 
                 </LinearLayout>
 
+                <include layout="@layout/common_divide_line" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="15dp"
                     android:text="内容管理"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -272,18 +320,22 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_content_1"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
+
                             android:text="工地"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -298,18 +350,22 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_content_2"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
+
                             android:text="案例"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -324,18 +380,22 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_content_3"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
+
                             android:text="产品"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -350,18 +410,22 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            android:src="@drawable/group" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_content_4"
+                            app:riv_border_width="0dip"
+                            app:riv_corner_radius="100dip" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="18dp"
                             android:layout_marginTop="7dp"
+
                             android:text="活动"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -369,6 +433,16 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="15dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

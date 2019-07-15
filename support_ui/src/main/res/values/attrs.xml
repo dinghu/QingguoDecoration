@@ -67,5 +67,15 @@
         <attr name="lpitabTextColor" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="TitleView">
+        <attr name="titleColor" format="color" />
+        <attr name="isLeftDisplay" format="boolean" />
+        <attr name="isCloseDisplay" format="boolean" />
+        <attr name="titleText" format="string" />
+        <attr name="rightText" format="string" />
+        <attr name="rightImg" format="reference" />
+        <attr name="leftImg" format="reference" />
+    </declare-styleable>
+
 
 </resources>
