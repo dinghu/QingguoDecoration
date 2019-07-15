@@ -8,4 +8,5 @@
     <color name="line_color">#c8cdcf</color>
     <color name="colorThemeBg">#E4E9EF</color>
     <color name="colorTheme">#f86106</color>
+    <color name="line_color_light">#f4f4f4</color>
 </resources>

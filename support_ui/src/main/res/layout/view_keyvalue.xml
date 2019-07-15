@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -7,7 +8,10 @@
         android:id="@+id/tvItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:paddingLeft="16dp"
+        android:paddingTop="13dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="13dp">
 
         <FrameLayout
             android:id="@+id/key_lay"
@@ -16,30 +20,56 @@
             android:layout_centerVertical="true">
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/tvKeyWrap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvKey"
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvKeyLong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivPreIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="16dp"
+                    android:scaleType="centerCrop"
+                    app:riv_border_width="0dip"
+                    app:riv_corner_radius="100dip" />
+
+                <!--<ImageView-->
+                <!--android:id="@+id/ivPreIcon"-->
+                <!--android:layout_width="24dp"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginRight="16dp"-->
+                <!--android:visibility="visible" />-->
+
+                <TextView
+                    android:id="@+id/tvKey"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ivPreIcon"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvKeyLong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ivPreIcon"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
         </FrameLayout>
 
 
@@ -54,12 +84,6 @@
             android:layout_toRightOf="@+id/key_lay"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/ivPreIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_centerVertical="true"
-                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvValue"
@@ -67,7 +91,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="6dp"
-                android:layout_toRightOf="@id/ivPreIcon"
                 android:ellipsize="middle"
                 android:gravity="center_vertical"
                 android:singleLine="true"

@@ -7,6 +7,7 @@ import com.fkh.support.ui.activity.HomeActivity;
 import com.fkh.support.ui.widget.NoScrollViewPager;
 import com.fkh.support.ui.widget.alphatab.AlphaTabsLayout;
 import com.qing.guo.decoration.fragment.HomeFragment;
+import com.qing.guo.decoration.fragment.MineFragment;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,7 @@ public class MainActivity extends HomeActivity {
         fragments.add(new HomeFragment());
         fragments.add(new HomeFragment());
         fragments.add(new HomeFragment());
-        fragments.add(new HomeFragment());
+        fragments.add(new MineFragment());
         bindFragement(fragments);
     }
 
