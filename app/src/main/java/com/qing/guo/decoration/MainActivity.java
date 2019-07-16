@@ -1,13 +1,12 @@
 package com.qing.guo.decoration;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 
 import com.fkh.support.ui.activity.HomeActivity;
 import com.fkh.support.ui.widget.NoScrollViewPager;
 import com.fkh.support.ui.widget.alphatab.AlphaTabsLayout;
-import com.qing.guo.decoration.fragment.HomeFragment;
-import com.qing.guo.decoration.fragment.MineFragment;
+import com.qing.guo.decoration.ui.fragment.HomeFragment;
+import com.qing.guo.decoration.ui.fragment.MineFragment;
 
 import java.util.ArrayList;
 

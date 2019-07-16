@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">QingguoDecoration</string>
+    <string name="about">关于</string>
+    <string name="fast_navigation">快速导航</string>
+    <string name="watching_fans">围观\n粉丝</string>
+    <string name="customer_service">客户服务</string>
+    <string name="decoration_offer">装修报价</string>
+    <string name="free_measuring_room">免费量房</string>
+    <string name="free_advisory">免费咨询</string>
+    <string name="sales_service">售后服务</string>
+    <string name="product_package">产品套餐</string>
+    <string name="more">更多</string>
+    <string name="selected_case">精选案例</string>
+    <string name="promotions">促销活动</string>
+    <string name="nearby_community">附近小区</string>
+    <string name="site_visit">工地参观</string>
+    <string name="community">小区</string>
+    <string name="decoration_style">装修风格</string>
+    <string name="decoration_stage">装修阶段</string>
+    <string name="sort_intelligent">智能排序</string>
+    <string name="sort_most_popular">人气最高</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.qing.guo.decoration.fragment;
+package com.qing.guo.decoration.ui.fragment;
 
 import android.view.View;
 

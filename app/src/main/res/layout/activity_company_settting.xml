@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line_color_light"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.fkh.support.ui.widget.TitleView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:titleText="公司设置" />
+
+        <com.fkh.support.ui.widget.KeyValueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:kvkey="当前版本"
+            app:kvrightImage="@drawable/icon_more"
+            app:kvvalueGravity="right"
+            app:kvvaluehint="专业版" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/line_color" />
+
+        <com.fkh.support.ui.widget.KeyValueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:kvkey="公司类型"
+            app:kvrightImage="@drawable/icon_more"
+            app:kvvalueGravity="right"
+            app:kvvaluehint="装修公司" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/line_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line_color_light" />
+
+        <com.fkh.support.ui.widget.KeyValueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:kvkey="合作材料商"
+            app:kvrightImage="@drawable/icon_more"
+            app:kvvalueGravity="right" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/line_color_light" />
+
+        <com.fkh.support.ui.widget.KeyValueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:kvkey="自定义阶段"
+            app:kvrightImage="@drawable/icon_more"
+            app:kvvalueGravity="right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/line_color" />
+
+        <com.fkh.support.ui.widget.KeyValueView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:kvkey="自定义客服消息"
+            app:kvrightImage="@drawable/icon_more"
+            app:kvvalueGravity="right" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

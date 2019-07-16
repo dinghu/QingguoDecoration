@@ -1,11 +1,8 @@
-package com.qing.guo.decoration.fragment;
+package com.qing.guo.decoration.ui.fragment;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,11 +18,9 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import com.qing.guo.decoration.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class HomeFragment extends BaseFragment {

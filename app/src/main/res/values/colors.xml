@@ -9,4 +9,11 @@
 
     <color name="font_sub">#dedede</color>
 
+    <color name="app_gray_bg_light">#F5F5F5</color>
+
+    <color name="color_text_gray">#A3A3A3</color>
+    <color name="drive_line">#E5E5E5</color>
+    <color name="drive_item">#F3F3F3</color>
+    <color name="color_CEDABE">#CEDABE</color>
+
 </resources>

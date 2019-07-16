@@ -34,6 +34,7 @@
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/ivPreIcon"
+                    android:visibility="gone"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginRight="16dp"
