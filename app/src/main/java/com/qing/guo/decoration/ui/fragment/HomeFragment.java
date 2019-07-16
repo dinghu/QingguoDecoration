@@ -60,21 +60,21 @@ public class HomeFragment extends BaseFragment {
         bannerList.add("http://image1.quanmama.com/AdminImageUpload/4684M1.png");
         //推广
         tuiguangScrollGirdView.setFocusable(false);
-        tuiguangScrollGirdView.setAdapter(new BaseListAdapter<Integer>(tuiguangList, getContext()) {
+        tuiguangScrollGirdView.setAdapter(new BaseListAdapter<Integer,TuiguangViewholder>(tuiguangList, getContext()) {
             @Override
             public int getItemLayout() {
                 return R.layout.item_home_tuiguang;
             }
 
             @Override
-            public Object getViewHolder(View convertView) {
+            public TuiguangViewholder getViewHolder(View convertView) {
                 TuiguangViewholder tuiguangViewholder = new TuiguangViewholder();
                 tuiguangViewholder.imageView = convertView.findViewById(R.id.image);
                 return tuiguangViewholder;
             }
 
             @Override
-            public void initializeViews(int position, Integer integer, Object holder) {
+            public void initializeViews(int position, Integer integer, TuiguangViewholder holder) {
                 TuiguangViewholder tuiguangViewholder = (TuiguangViewholder) holder;
                 tuiguangViewholder.imageView.setImageResource(integer);
             }

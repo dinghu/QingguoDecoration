@@ -6,10 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseListAdapter<T> extends BaseAdapter {
+public abstract class BaseListAdapter<T, ViewHolder> extends BaseAdapter {
 
     protected List<T> mList;
     protected Context mContext;
@@ -36,9 +35,9 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
 
     public abstract int getItemLayout();
 
-    public abstract Object getViewHolder(View convertView);
+    public abstract ViewHolder getViewHolder(View convertView);
 
-    public abstract void initializeViews(int position, T t, Object holder);
+    public abstract void initializeViews(int position, T t, ViewHolder holder);
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -46,7 +45,7 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
             convertView = LayoutInflater.from(mContext).inflate(getItemLayout(), null);
             convertView.setTag(getViewHolder(convertView));
         }
-        initializeViews(position, getItem(position), convertView.getTag());
+        initializeViews(position, getItem(position), (ViewHolder) convertView.getTag());
         return convertView;
     }
 

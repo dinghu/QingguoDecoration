@@ -9,7 +9,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.List;
 
-public abstract class RefreshLoadListViewFragment<T> extends RefreshLoadFragment<T> {
+public abstract class RefreshLoadListViewFragment<T,ViewHolder> extends RefreshLoadFragment<T> {
     private AbsListView listView;
     private BaseListAdapter adapter;
     private int itemLayout;
@@ -41,12 +41,12 @@ public abstract class RefreshLoadListViewFragment<T> extends RefreshLoadFragment
         super.dealError(message);
     }
 
-    public abstract Object getViewHolder(View convertView);
+    public abstract ViewHolder getViewHolder(View convertView);
 
-    public abstract void initializeViews(int position, T t, Object holder);
+    public abstract void initializeViews(int position, T t, ViewHolder holder);
 
 
-    private class ListAdapter extends BaseListAdapter<T> {
+    private class ListAdapter extends BaseListAdapter<T,ViewHolder> {
 
         public ListAdapter(Context context, List<T> list) {
             super(list, context);
@@ -58,12 +58,12 @@ public abstract class RefreshLoadListViewFragment<T> extends RefreshLoadFragment
         }
 
         @Override
-        public Object getViewHolder(View convertView) {
+        public ViewHolder getViewHolder(View convertView) {
             return RefreshLoadListViewFragment.this.getViewHolder(convertView);
         }
 
         @Override
-        public void initializeViews(int position, T object, Object holder) {
+        public void initializeViews(int position, T object, ViewHolder holder) {
             RefreshLoadListViewFragment.this.initializeViews(position, object, holder);
         }
     }
