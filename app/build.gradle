@@ -16,6 +16,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        debug {
+            File strFile = new File("sign.jks")
+            storeFile file(strFile)
+            storePassword "dinghu"
+            keyAlias 'qingshuqinghua'
+            keyPassword "dinghu"
+            //println strFile.absolutePath;
+        }
+        release {
+            File strFile = new File("sign.jks")
+            storeFile file(strFile)
+            storePassword "dinghu"
+            keyAlias 'qingshuqinghua'
+            keyPassword "dinghu"
+            // println strFile.absolutePath;
+        }
+    }
 }
 
 dependencies {
