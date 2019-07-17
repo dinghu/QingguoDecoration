@@ -98,20 +98,22 @@
         android:layout_height="1dp"
         android:background="@color/drive_line" />
 
-    <FrameLayout
-        android:id="@+id/layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <include layout="@layout/activity_refresh_load_common" />
 
-        <include
-            layout="@layout/layout_recycleview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="@dimen/default_border"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/default_border"
-            android:orientation="horizontal" />
-    </FrameLayout>
+    <!--<FrameLayout-->
+    <!--android:id="@+id/layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1">-->
+
+    <!--<include-->
+    <!--layout="@layout/layout_recycleview"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginStart="@dimen/default_border"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginEnd="@dimen/default_border"-->
+    <!--android:orientation="horizontal" />-->
+    <!--</FrameLayout>-->
 </LinearLayout>

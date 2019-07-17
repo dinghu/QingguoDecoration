@@ -38,6 +38,7 @@
         android:background="@color/white"
         android:clickable="false"
         android:gravity="center"
+        android:visibility="gone"
         android:text="没有内容"
         android:textColor="@android:color/darker_gray"
         android:textSize="18sp" />
