@@ -173,6 +173,7 @@
                     android:paddingBottom="15dp">
 
                     <LinearLayout
+                        android:id="@+id/company_setting"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -204,6 +205,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/company_info"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -233,6 +235,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/company_members"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -263,6 +266,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/company_bindweichat"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -313,6 +317,7 @@
                     android:paddingBottom="15dp">
 
                     <LinearLayout
+                        android:id="@+id/site"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -343,6 +348,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/cases"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -365,7 +371,6 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginTop="7dp"
-
                             android:text="案例"
                             android:textColor="#666666"
                             android:textSize="12sp" />
@@ -373,6 +378,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/product"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -403,6 +409,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/activities"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

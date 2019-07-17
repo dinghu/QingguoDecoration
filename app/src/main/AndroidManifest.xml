@@ -24,6 +24,15 @@
         <activity
             android:name=".ui.activity.CompanySetttingActivity"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.activity.ActivityListActivity" />
+        <activity android:name=".ui.activity.CompanyInfoActivity" />
+        <activity android:name=".ui.activity.CompanyMembersActivity" />
+        <activity android:name=".ui.activity.ProductDetailActivity" />
+        <activity android:name=".ui.activity.ProductListActivity" />
+        <activity android:name=".ui.activity.SiteDetailActivity" />
+        <activity android:name=".ui.activity.SiteListActivity" />
+        <activity android:name=".ui.activity.CaseListActivity" />
     </application>
 
 

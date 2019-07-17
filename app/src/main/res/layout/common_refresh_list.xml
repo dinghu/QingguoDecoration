@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <com.fkh.support.ui.widget.TitleView
-        android:id="@+id/title"
+        android:id="@+id/titleView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:titleText="" />

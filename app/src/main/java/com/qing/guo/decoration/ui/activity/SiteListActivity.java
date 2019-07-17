@@ -47,10 +47,18 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Integer, SiteL
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_site_list);
-        ButterKnife.bind(this);
+    public int getItemLayout() {
+        return R.layout.item_site;
+    }
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_site_list;
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override

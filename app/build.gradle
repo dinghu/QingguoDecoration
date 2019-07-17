@@ -2,6 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
     defaultConfig {
         applicationId "com.qing.guo.decoration"
         minSdkVersion 17
@@ -34,14 +41,15 @@ android {
             // println strFile.absolutePath;
         }
     }
+    buildToolsVersion '28.0.0'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     // 注解
-//    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+    //    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+    //    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
     implementation 'com.squareup.retrofit2:converter-scalars:2.0.2'
@@ -59,4 +67,5 @@ dependencies {
     implementation 'com.lovedise:permissiongen:0.0.6'
     implementation 'com.hyman:flowlayout-lib:1.1.2'
     implementation project(':support_ui')
+    implementation files('libs/BaiduLBS_Android.jar')
 }

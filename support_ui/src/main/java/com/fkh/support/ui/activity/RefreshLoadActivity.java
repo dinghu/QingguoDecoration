@@ -13,7 +13,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.List;
 
-public abstract class RefreshLoadActivity<T> extends Activity {
+public abstract class RefreshLoadActivity<T> extends BaseActivity {
     protected SmartRefreshLayout swipeRefreshLayout;
     protected List<T> mData;
     protected View noData;
@@ -23,16 +23,7 @@ public abstract class RefreshLoadActivity<T> extends Activity {
         this.noData = noData;
     }
 
-
-
     public abstract void getData(int page, boolean isRefreh);
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_refresh_load_common);
-    }
 
     protected void bindView(SmartRefreshLayout swipeRefreshLayout, List<T> mData) {
         this.swipeRefreshLayout = swipeRefreshLayout;

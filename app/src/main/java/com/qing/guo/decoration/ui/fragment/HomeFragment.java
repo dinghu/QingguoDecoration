@@ -1,8 +1,10 @@
 package com.qing.guo.decoration.ui.fragment;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,11 +18,21 @@ import com.fkh.support.ui.widget.ScrollGirdView;
 import com.fkh.support.ui.widget.ScrollListView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.qing.guo.decoration.R;
+import com.qing.guo.decoration.ui.activity.ActivityListActivity;
+import com.qing.guo.decoration.ui.activity.CaseListActivity;
+import com.qing.guo.decoration.ui.activity.CompanyInfoActivity;
+import com.qing.guo.decoration.ui.activity.CompanyMembersActivity;
+import com.qing.guo.decoration.ui.activity.CompanySetttingActivity;
+import com.qing.guo.decoration.ui.activity.ProductListActivity;
+import com.qing.guo.decoration.ui.activity.SiteListActivity;
+import com.qing.guo.decoration.utils.ActivityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class HomeFragment extends BaseFragment {
@@ -42,9 +54,41 @@ public class HomeFragment extends BaseFragment {
         return R.layout.fragment_home;
     }
 
+
+    @OnClick({R.id.company_setting, R.id.company_info, R.id.company_members, R.id.company_bindweichat, R.id.site, R.id.cases, R.id.product, R.id.activities})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.company_setting:
+                ActivityUtils.startActivity(getContext(), CompanySetttingActivity.class);
+                break;
+            case R.id.company_info:
+                ActivityUtils.startActivity(getContext(), CompanyInfoActivity.class);
+                break;
+            case R.id.company_members:
+                ActivityUtils.startActivity(getContext(), CompanyMembersActivity.class);
+                break;
+            case R.id.company_bindweichat:
+//                ActivityUtils.startActivity(getContext(), CompanySetttingActivity.class);
+                break;
+            case R.id.site:
+                ActivityUtils.startActivity(getContext(), SiteListActivity.class);
+                break;
+            case R.id.cases:
+                ActivityUtils.startActivity(getContext(), CaseListActivity.class);
+                break;
+            case R.id.product:
+                ActivityUtils.startActivity(getContext(), ProductListActivity.class);
+                break;
+            case R.id.activities:
+                ActivityUtils.startActivity(getContext(), ActivityListActivity.class);
+                break;
+        }
+    }
+
     class TuiguangViewholder {
         ImageView imageView;
     }
+
 
     @Override
     protected void initView(View view) {
@@ -60,7 +104,7 @@ public class HomeFragment extends BaseFragment {
         bannerList.add("http://image1.quanmama.com/AdminImageUpload/4684M1.png");
         //推广
         tuiguangScrollGirdView.setFocusable(false);
-        tuiguangScrollGirdView.setAdapter(new BaseListAdapter<Integer,TuiguangViewholder>(tuiguangList, getContext()) {
+        tuiguangScrollGirdView.setAdapter(new BaseListAdapter<Integer, TuiguangViewholder>(tuiguangList, getContext()) {
             @Override
             public int getItemLayout() {
                 return R.layout.item_home_tuiguang;

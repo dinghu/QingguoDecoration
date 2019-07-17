@@ -2,6 +2,7 @@ package com.qing.guo.decoration.ui.activity;
 
 import android.view.View;
 
+import com.qing.guo.decoration.R;
 import com.qing.guo.decoration.base.BaseRefreshLoadListViewActivity;
 
 /**
@@ -10,6 +11,11 @@ import com.qing.guo.decoration.base.BaseRefreshLoadListViewActivity;
 public class ProductListActivity extends BaseRefreshLoadListViewActivity<Integer, ProductListActivity.ViewHolder> {
     public class ViewHolder {
 
+    }
+
+    @Override
+    public int getItemLayout() {
+        return R.layout.item_product;
     }
 
     @Override

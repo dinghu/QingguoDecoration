@@ -13,12 +13,10 @@ public abstract class RefreshLoadListViewActivity<T,ViewHolder> extends RefreshL
 
     private AbsListView listView;
     private BaseListAdapter adapter;
-    private int itemLayout;
 
-    public void bindView(SmartRefreshLayout smartRefreshLayout, AbsListView listView, List<T> mData, int itemLayout) {
+    public void bindView(SmartRefreshLayout smartRefreshLayout, AbsListView listView, List<T> mData) {
         super.bindView(smartRefreshLayout, mData);
         this.listView = listView;
-        this.itemLayout = itemLayout;
         adapter = new ListAdapter(this, mData);
         this.listView.setAdapter(this.adapter);
     }
@@ -43,6 +41,7 @@ public abstract class RefreshLoadListViewActivity<T,ViewHolder> extends RefreshL
     }
 
     public abstract ViewHolder getViewHolder(View convertView);
+    public abstract int getItemLayout();
 
     public abstract void initializeViews(int position, T t, ViewHolder holder);
 
@@ -55,7 +54,7 @@ public abstract class RefreshLoadListViewActivity<T,ViewHolder> extends RefreshL
 
         @Override
         public int getItemLayout() {
-            return itemLayout;
+            return RefreshLoadListViewActivity.this.getItemLayout();
         }
 
         @Override
