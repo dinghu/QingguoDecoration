@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import com.fkh.support.ui.activity.HomeActivity;
 import com.fkh.support.ui.widget.NoScrollViewPager;
 import com.fkh.support.ui.widget.alphatab.AlphaTabsLayout;
+import com.qing.guo.decoration.ui.fragment.ChatFragment;
+import com.qing.guo.decoration.ui.fragment.DataFragment;
 import com.qing.guo.decoration.ui.fragment.HomeFragment;
 import com.qing.guo.decoration.ui.fragment.MineFragment;
 
@@ -29,8 +31,8 @@ public class MainActivity extends HomeActivity {
         mAlphaIndicator = MainActivity.this.alphaIndicator;
         mViewPager = viewPager;
         fragments.add(new HomeFragment());
-        fragments.add(new HomeFragment());
-        fragments.add(new HomeFragment());
+        fragments.add(new ChatFragment());
+        fragments.add(new DataFragment());
         fragments.add(new MineFragment());
         bindFragement(fragments);
     }

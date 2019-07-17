@@ -2,13 +2,18 @@ package com.qing.guo.decoration.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.fkh.support.ui.activity.RefreshLoadListViewActivity;
 import com.qing.guo.decoration.R;
+import com.qing.guo.decoration.utils.ActivityUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,6 +47,8 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Integer, SiteL
     @BindView(R.id.noDataView)
     TextView noDataView;
 
+    List<Integer> mDatas = new ArrayList<>();
+
     public class ViewHolder {
 
     }
@@ -58,7 +65,15 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Integer, SiteL
 
     @Override
     protected void initView() {
-
+        mDatas.add(1);
+        mDatas.add(2);
+        bindView(smartRefreshLayout, list, mDatas);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ActivityUtils.startActivity(SiteListActivity.this,SiteDetailActivity.class);
+            }
+        });
     }
 
     @Override

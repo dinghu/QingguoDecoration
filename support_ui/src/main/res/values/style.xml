@@ -34,7 +34,7 @@
 
 
     <style name="textColorTitle1">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/colorTheme</item>
         <item name="android:textSize">15sp</item>
     </style>
 

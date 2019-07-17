@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.fkh.support.ui.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:isLeftDisplay="false"
+        app:rightText="通讯录"
+        app:titleText="聊天" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="16dp">
+
+
+        <EditText
+            android:id="@+id/search_value"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/search"
+            android:background="@drawable/corner_5_shape_gray"
+            android:gravity="center"
+            android:hint="搜索群组"
+            android:imeOptions="actionDone"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="100dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/no_conversation" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="26dp"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:text="没有正在处理的客户聊天" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/font_sub959595"
+            android:textSize="13sp"
+            android:text="点击右上角的通讯录，可以查看所有客户" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

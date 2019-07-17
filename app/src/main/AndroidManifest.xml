@@ -33,6 +33,8 @@
         <activity android:name=".ui.activity.SiteDetailActivity" />
         <activity android:name=".ui.activity.SiteListActivity" />
         <activity android:name=".ui.activity.CaseListActivity" />
+        <activity android:name=".ui.activity.CaseDetailActivity"/>
+        <activity android:name=".ui.activity.ActivityDetailActivity"/>
     </application>
 
 

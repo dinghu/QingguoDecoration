@@ -1,10 +1,12 @@
 package com.qing.guo.decoration.ui.activity;
 
 import android.view.View;
+import android.widget.AdapterView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.qing.guo.decoration.R;
 import com.qing.guo.decoration.base.BaseRefreshLoadListViewActivity;
+import com.qing.guo.decoration.utils.ActivityUtils;
 
 public class CaseListActivity extends BaseRefreshLoadListViewActivity<Integer, CaseListActivity.ViewHolder> {
     public class ViewHolder {
@@ -18,6 +20,19 @@ public class CaseListActivity extends BaseRefreshLoadListViewActivity<Integer, C
     @Override
     public int getItemLayout() {
         return R.layout.item_case;
+    }
+
+    @Override
+    protected void initView() {
+        mDatas.add(1);
+        mDatas.add(2);
+        super.initView();
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ActivityUtils.startActivity(CaseListActivity.this,CaseDetailActivity.class);
+            }
+        });
     }
 
     @Override
