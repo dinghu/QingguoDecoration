@@ -50,6 +50,15 @@ public abstract class RefreshLoadActivity<T> extends BaseActivity {
         swipeRefreshLayout.setEnableLoadMore(false);
     }
 
+    public void dealDataRecive(List<T> reciveData, boolean noMoreData) {
+        boolean isRefresh = swipeRefreshLayout.isRefreshing();
+        if (isRefresh) {
+            mData.clear();
+        }
+        mData.addAll(reciveData);
+        notifyDataSetChanged(noMoreData);
+    }
+
 
     public void notifyDataSetChanged(boolean noMoreData) {
         if (mData != null && !mData.isEmpty()) {
@@ -83,6 +92,6 @@ public abstract class RefreshLoadActivity<T> extends BaseActivity {
         } else {
             swipeRefreshLayout.finishLoadMore();
         }
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }

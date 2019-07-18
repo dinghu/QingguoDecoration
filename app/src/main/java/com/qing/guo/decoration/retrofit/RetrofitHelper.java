@@ -4,15 +4,22 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.baidu.platform.domain.HttpsEnable;
 import com.qing.guo.decoration.retrofit.interceptor.HeaderInterceptor;
 import com.qing.guo.decoration.retrofit.interceptor.HttpLoggingInterceptor;
+import com.qing.guo.decoration.service.ApiService;
 
 import java.io.File;
+import java.lang.reflect.Type;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -23,9 +30,37 @@ public class RetrofitHelper {
     private final long CACHESIZE = 10 * 1024 * 1024;
 
     private static RetrofitHelper mInstance;
+    private static ApiService apiService;
 
     public static Retrofit getRetrofit() {
         return RetrofitHelper.mInstance.mRetrofit;
+    }
+
+    public static <T> void sendRequest(Call<T> call, final ResponseListener<T> responseListener) {
+        call.enqueue(new Callback<T>() {
+            @Override
+            public void onResponse(Call<T> call, Response<T> response) {
+                try {
+                    if (response.isSuccessful()) {
+                        responseListener.onSuccess(response.body());
+                    } else {
+                        responseListener.onFail("" + response.code(), response.errorBody().string());
+                    }
+                } catch (Exception e) {
+                    responseListener.onFail("" + response.code(), e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<T> call, Throwable t) {
+                responseListener.onFail("-1", t.getMessage());
+            }
+        });
+    }
+
+    public static ApiService getApiService() {
+        return apiService;
     }
 
     public static RetrofitHelper getInstance() {
@@ -37,6 +72,7 @@ public class RetrofitHelper {
 
     public static void init(Context context, String baseUrl) {
         getInstance().initRetrofit(context, baseUrl);
+        apiService = getRetrofit().create(ApiService.class);
     }
 
     /**

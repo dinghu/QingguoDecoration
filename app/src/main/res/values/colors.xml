@@ -13,5 +13,6 @@
     <color name="drive_line">#E5E5E5</color>
     <color name="drive_item">#F3F3F3</color>
     <color name="color_CEDABE">#CEDABE</color>
+    <color name="colorTransparent">#00000000</color>
 
 </resources>

@@ -21,6 +21,8 @@
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:divider="@color/line_color"
+            android:dividerHeight="0.5dp"
             android:overScrollMode="never"
             android:scrollbars="none" />
 
@@ -38,9 +40,9 @@
         android:background="@color/white"
         android:clickable="false"
         android:gravity="center"
-        android:visibility="gone"
         android:text="没有内容"
         android:textColor="@android:color/darker_gray"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone" />
 
 </FrameLayout>
