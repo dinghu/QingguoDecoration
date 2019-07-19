@@ -2,10 +2,13 @@ package com.qing.guo.decoration.service;
 
 import com.qing.guo.decoration.entity.resp.BaseResp;
 import com.qing.guo.decoration.entity.resp.DataResp;
+import com.qing.guo.decoration.entity.resp.House;
 import com.qing.guo.decoration.entity.resp.ListResp;
 import com.qing.guo.decoration.entity.resp.Product;
 import com.qing.guo.decoration.entity.resp.ProductDetail;
 import com.qing.guo.decoration.entity.resp.QActivity;
+import com.qing.guo.decoration.entity.resp.Site;
+import com.qing.guo.decoration.entity.resp.SiteDetail;
 
 import java.util.Map;
 
@@ -33,4 +36,13 @@ public interface ApiService {
 
     @POST("app/activity/list")
     Call<ListResp<QActivity>> getQActivityList();
+
+    @POST("app/house/list")
+    Call<ListResp<House>> getHouseList();
+
+    @POST("app/site/list")
+    Call<ListResp<Site>> getSiteList();
+
+    @POST("  app/opration/get")
+    Call<DataResp<SiteDetail>> getSiteDetail(@Query("id")Integer id);
 }
