@@ -14,5 +14,8 @@
     <color name="drive_item">#F3F3F3</color>
     <color name="color_CEDABE">#CEDABE</color>
     <color name="colorTransparent">#00000000</color>
+    <color name="app_pic_bg">#e1e8ed</color>
+
+    <color name="wechat">#42af35</color>
 
 </resources>

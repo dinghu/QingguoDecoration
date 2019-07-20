@@ -35,7 +35,7 @@ public class ProductListActivity extends BaseRefreshLoadListViewActivity<Product
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 Product product = mDatas.get(i);
                 showLoading();
-                ApiServiceImpl.getProductDetail(Integer.valueOf(product.id), new ResponseListener<DataResp<ProductDetail>>() {
+                ApiServiceImpl.getProductDetail(product.id, new ResponseListener<DataResp<ProductDetail>>() {
                     @Override
                     public void onSuccess(DataResp<ProductDetail> productDetailDataResp) {
                         hideLoading();

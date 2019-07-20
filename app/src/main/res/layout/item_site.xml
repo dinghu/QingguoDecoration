@@ -31,7 +31,7 @@
             android:background="@drawable/corner_5_shape_appskin"
             android:padding="3dp"
             android:textColor="@color/white"
-            tools:text="入住" />
+            android:text="入住" />
 
         <TextView
             android:id="@+id/title"
@@ -43,7 +43,7 @@
             android:singleLine="true"
             android:textColor="@color/black"
             android:textSize="16sp"
-            tools:text="样板工地：海伦天路装修工程" />
+            android:text="样板工地：海伦天路装修工程" />
 
         <TextView
             android:id="@+id/info"
@@ -55,7 +55,7 @@
             android:layout_toRightOf="@+id/image"
             android:textColor="@color/black"
             android:textSize="13sp"
-            tools:text="80平米 2室2厅 简约 全包 20万" />
+            android:text="80平米 2室2厅 简约 全包 20万" />
 
         <TextView
             android:id="@+id/location"
@@ -69,7 +69,7 @@
             android:gravity="center_vertical"
             android:textColor="@color/font_sub959595"
             android:textSize="13sp"
-            tools:text="80平米 2室2厅 简约 全包 20万" />
+            android:text="上海市普陀区灵石路16号" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
                 android:padding="3dp"
                 android:textColor="@color/font_sub959595"
                 android:textSize="10sp"
-                tools:text="入住" />
+                android:text="浏览 10" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                 android:padding="3dp"
                 android:textColor="@color/font_sub959595"
                 android:textSize="10sp"
-                tools:text="距离我1657.9km" />
+                android:text="距离我1657.9km" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -108,6 +108,7 @@
         android:layout_height="0.5dp" />
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:orientation="horizontal">

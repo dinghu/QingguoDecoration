@@ -1,22 +1,16 @@
 package com.qing.guo.decoration.ui.activity;
 
-import android.os.Bundle;
-import android.text.Html;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.ScreenUtils;
 import com.bumptech.glide.Glide;
 import com.fkh.support.ui.activity.BaseActivity;
 import com.qing.guo.decoration.R;
 import com.qing.guo.decoration.entity.resp.ProductDetail;
 import com.qing.guo.decoration.utils.AppUtils;
-import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class ProductDetailActivity extends BaseActivity {
 

@@ -2,10 +2,12 @@ package com.qing.guo.decoration.entity.resp;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by dinghu on 2019/7/19.
  */
-public class SiteDetail {
+public class SiteDetail implements Serializable {
 
     /**
      * isNewRecord : false
