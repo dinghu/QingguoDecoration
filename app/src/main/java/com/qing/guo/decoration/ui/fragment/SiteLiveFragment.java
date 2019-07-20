@@ -4,11 +4,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.fkh.support.ui.adapter.BaseListAdapter;
 import com.fkh.support.ui.fragment.BaseFragment;
 import com.fkh.support.ui.widget.ScrollListView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.qing.guo.decoration.R;
+import com.qing.guo.decoration.entity.resp.DataResp;
+import com.qing.guo.decoration.entity.resp.ListResp;
+import com.qing.guo.decoration.entity.resp.Oprationdynamic;
+import com.qing.guo.decoration.entity.resp.OprationdynamicDetail;
+import com.qing.guo.decoration.entity.resp.SiteDetail;
+import com.qing.guo.decoration.retrofit.ResponseListener;
+import com.qing.guo.decoration.service.impl.ApiServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +30,14 @@ import butterknife.ButterKnife;
 public class SiteLiveFragment extends BaseFragment {
     @BindView(R.id.dongtaiList)
     ScrollListView dongtaiList;
+    SiteDetail siteDetail;
+    BaseListAdapter adapter;
 
-    private List<Integer> integers = new ArrayList<>();
+    public void setSiteDetail(SiteDetail siteDetail) {
+        this.siteDetail = siteDetail;
+    }
+
+    private List<Oprationdynamic> oprationdynamics = new ArrayList<>();
 
     @Override
     protected int getLayoutId() {
@@ -33,10 +47,7 @@ public class SiteLiveFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        integers.add(1);
-        integers.add(2);
-        integers.add(3);
-        dongtaiList.setAdapter(new BaseListAdapter<Integer,ViewHolder>(integers,getContext()) {
+        adapter = new BaseListAdapter<Oprationdynamic, ViewHolder>(oprationdynamics, getContext()) {
             @Override
             public int getItemLayout() {
                 return R.layout.item_site_dongtai;
@@ -48,8 +59,26 @@ public class SiteLiveFragment extends BaseFragment {
             }
 
             @Override
-            public void initializeViews(int position, Integer integer, ViewHolder viewHolder) {
+            public void initializeViews(int position, Oprationdynamic integer, ViewHolder viewHolder) {
 
+            }
+        };
+        dongtaiList.setAdapter(adapter);
+        getSiteDongtai();
+    }
+
+    void getSiteDongtai() {
+        ApiServiceImpl.getOprationdynamicList(siteDetail.getId(), new ResponseListener<ListResp<Oprationdynamic>>() {
+            @Override
+            public void onSuccess(ListResp<Oprationdynamic> oprationdynamicDetailListResp) {
+                oprationdynamics.clear();
+                oprationdynamics.addAll(oprationdynamicDetailListResp.list);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFail(String code, String message) {
+                ToastUtils.showLong(message);
             }
         });
     }

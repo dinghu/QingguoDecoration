@@ -14,6 +14,7 @@ import com.fkh.support.ui.activity.HomeActivity;
 import com.fkh.support.ui.widget.NoScrollViewPager;
 import com.qing.guo.decoration.R;
 import com.qing.guo.decoration.adapter.CommonFragmentPagerAdapter;
+import com.qing.guo.decoration.entity.resp.SiteDetail;
 import com.qing.guo.decoration.ui.fragment.ChatFragment;
 import com.qing.guo.decoration.ui.fragment.DataFragment;
 import com.qing.guo.decoration.ui.fragment.HomeFragment;
@@ -74,7 +75,10 @@ public class SiteDetailActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        fragments.add(new SiteLiveFragment());
+        SiteDetail siteDetail = (SiteDetail) getIntent().getSerializableExtra("siteDetail");
+        SiteLiveFragment siteLiveFragment = new SiteLiveFragment();
+        siteLiveFragment.setSiteDetail(siteDetail);
+        fragments.add(siteLiveFragment);
         fragments.add(new SiteTeamFragment());
         fragments.add(new SiteProductFragment());
         fragments.add(new SiteCommentFragment());

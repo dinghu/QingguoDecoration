@@ -5,6 +5,7 @@ import com.qing.guo.decoration.entity.resp.CompanyDetail;
 import com.qing.guo.decoration.entity.resp.DataResp;
 import com.qing.guo.decoration.entity.resp.House;
 import com.qing.guo.decoration.entity.resp.ListResp;
+import com.qing.guo.decoration.entity.resp.Oprationdynamic;
 import com.qing.guo.decoration.entity.resp.OprationdynamicDetail;
 import com.qing.guo.decoration.entity.resp.Oprationteam;
 import com.qing.guo.decoration.entity.resp.OprationteamDetail;
@@ -65,7 +66,7 @@ public interface ApiService {
     Call<DataResp<OprationdynamicDetail>> getOprationdynamicDetail(@Query("id") String id);
 
     @POST("app/oprationdynamic/list")
-    Call<ListResp<OprationdynamicDetail>> getOprationdynamicList();
+    Call<ListResp<Oprationdynamic>> getOprationdynamicList();
 
     @POST("app/user/save")
     Call<BaseResp> saveUser(@FieldMap Map<String, String> map);
