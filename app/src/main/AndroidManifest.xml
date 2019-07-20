@@ -36,6 +36,8 @@
         <activity android:name=".ui.activity.CaseListActivity" />
         <activity android:name=".ui.activity.CaseDetailActivity"/>
         <activity android:name=".ui.activity.ActivityDetailActivity"/>
+
+        <activity android:name=".ui.activity.AboatActivity"/>
     </application>
 
 

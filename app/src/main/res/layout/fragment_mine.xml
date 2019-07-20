@@ -201,9 +201,10 @@
             android:background="@color/line_color" />
 
         <com.fkh.support.ui.widget.KeyValueView
+            android:id="@+id/aboat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:kvkey="关于青果装饰"
+            app:kvkey="关于美易装"
             app:kvrightImage="@drawable/icon_more"
             app:kvtextPreImage="@drawable/icon_me_5" />
 
