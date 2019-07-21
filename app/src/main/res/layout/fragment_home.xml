@@ -37,9 +37,10 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/nickName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="张三"
+                            android:text="昵称"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />

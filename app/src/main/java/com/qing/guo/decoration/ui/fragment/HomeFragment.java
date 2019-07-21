@@ -1,7 +1,9 @@
 package com.qing.guo.decoration.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
+import com.blankj.utilcode.util.SPUtils;
 import com.bumptech.glide.Glide;
 import com.fkh.support.ui.adapter.BaseListAdapter;
 import com.fkh.support.ui.fragment.BaseFragment;
@@ -18,6 +21,10 @@ import com.fkh.support.ui.widget.ScrollGirdView;
 import com.fkh.support.ui.widget.ScrollListView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.qing.guo.decoration.R;
+import com.qing.guo.decoration.entity.resp.CompanyDetail;
+import com.qing.guo.decoration.entity.resp.DataResp;
+import com.qing.guo.decoration.retrofit.ResponseListener;
+import com.qing.guo.decoration.service.impl.ApiServiceImpl;
 import com.qing.guo.decoration.ui.activity.ActivityListActivity;
 import com.qing.guo.decoration.ui.activity.CaseListActivity;
 import com.qing.guo.decoration.ui.activity.CompanyInfoActivity;
@@ -45,9 +52,11 @@ public class HomeFragment extends BaseFragment {
     ConvenientBanner convenientBanner;
     @BindView(R.id.dongtaiList)
     ScrollListView dongtaiList;
-    Unbinder unbinder;
+    @BindView(R.id.nickName)
+    TextView nickName;
     List<String> bannerList = new ArrayList<>();
     ArrayList<Integer> tuiguangList = new ArrayList<>();
+    CompanyDetail companyDetail;
 
     @Override
     protected int getLayoutId() {
@@ -62,7 +71,11 @@ public class HomeFragment extends BaseFragment {
                 ActivityUtils.startActivity(getContext(), CompanySetttingActivity.class);
                 break;
             case R.id.company_info:
-                ActivityUtils.startActivity(getContext(), CompanyInfoActivity.class);
+                if (companyDetail!=null){
+                    Intent intent = new Intent(getContext(), CompanyInfoActivity.class);
+                    intent.putExtra("companyDetail",companyDetail);
+                    ActivityUtils.startActivity(getContext(),intent);
+                }
                 break;
             case R.id.company_members:
                 ActivityUtils.startActivity(getContext(), CompanyMembersActivity.class);
@@ -83,6 +96,24 @@ public class HomeFragment extends BaseFragment {
                 ActivityUtils.startActivity(getContext(), ActivityListActivity.class);
                 break;
         }
+    }
+
+    private void getCompanyInfo(){
+        ApiServiceImpl.getCompanyDetail("1", new ResponseListener<DataResp<CompanyDetail>>() {
+            @Override
+            public void onSuccess(DataResp<CompanyDetail> companyDetailDataResp) {
+                ActivityUtils.startActivity(getContext(), CompanyInfoActivity.class);
+            }
+
+            @Override
+            public void onFail(String code, String message) {
+
+            }
+        });
+    }
+
+    void initData(){
+        getCompanyInfo();
     }
 
     class TuiguangViewholder {
@@ -125,6 +156,13 @@ public class HomeFragment extends BaseFragment {
         });
         //banner
         initBanner();
+
+        String userName = SPUtils.getInstance().getString("username");
+        if (!TextUtils.isEmpty(userName)) {
+            nickName.setText(userName);
+        }
+
+        initData();
     }
 
     void initBanner() {

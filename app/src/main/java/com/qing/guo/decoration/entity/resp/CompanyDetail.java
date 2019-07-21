@@ -1,9 +1,11 @@
 package com.qing.guo.decoration.entity.resp;
 
+import java.io.Serializable;
+
 /**
  * Created by dinghu on 2019/7/19.
  */
-public class CompanyDetail {
+public class CompanyDetail implements Serializable{
     public String logo;//	String
     public String name;//	String
     public String shortname;//String
