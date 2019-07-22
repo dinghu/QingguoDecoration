@@ -2,11 +2,9 @@ package com.qing.guo.decoration.ui.fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
@@ -28,14 +25,10 @@ import com.fkh.support.ui.widget.ScrollGirdView;
 import com.fkh.support.ui.widget.ScrollListView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.qing.guo.decoration.R;
-import com.qing.guo.decoration.entity.req.RongTokenReq;
 import com.qing.guo.decoration.entity.resp.CompanyDetail;
 import com.qing.guo.decoration.entity.resp.DataResp;
-import com.qing.guo.decoration.entity.resp.RongTokenResp;
 import com.qing.guo.decoration.retrofit.ResponseListener;
-import com.qing.guo.decoration.retrofit.RetrofitHelper;
 import com.qing.guo.decoration.service.impl.ApiServiceImpl;
-import com.qing.guo.decoration.service.impl.ImServiceImpl;
 import com.qing.guo.decoration.ui.activity.ActivityListActivity;
 import com.qing.guo.decoration.ui.activity.CaseListActivity;
 import com.qing.guo.decoration.ui.activity.CompanyInfoActivity;
@@ -53,6 +46,7 @@ import com.qing.guo.decoration.ui.activity.WebViewActivity;
 import com.qing.guo.decoration.utils.ActivityUtils;
 import com.qing.guo.decoration.utils.AppUtils;
 import com.qing.guo.decoration.utils.RongUtils;
+import com.qing.guo.decoration.utils.UserUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,9 +55,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import io.rong.imkit.RongIM;
-import io.rong.imlib.RongIMClient;
-import io.rong.imlib.model.UserInfo;
 
 public class HomeFragment extends BaseFragment {
 
@@ -106,6 +97,13 @@ public class HomeFragment extends BaseFragment {
     LinearLayout mianfeizixun;
     @BindView(R.id.shouhoufuwu)
     LinearLayout shouhoufuwu;
+
+    private void updateUser() {
+        if (UserUtils.isLogin()) {
+            nickName.setText(UserUtils.getLoginName());
+        }
+    }
+
 
     @Override
     protected int getLayoutId() {
@@ -180,6 +178,15 @@ public class HomeFragment extends BaseFragment {
         getCompanyInfo();
     }
 
+
+    @OnClick(R.id.myInfoLay)
+    public void onViewClicked() {
+        String userName = SPUtils.getInstance().getString("username");
+        if (TextUtils.isEmpty(userName)) {
+            UserUtils.reqLogin(getContext());
+        }
+    }
+
     class TuiguangViewholder {
         ImageView imageView;
     }
@@ -213,13 +220,13 @@ public class HomeFragment extends BaseFragment {
         tuiguangScrollGirdView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (1 == i){
+                if (1 == i) {
                     ActivityUtils.startActivity(getContext(), HouseListActivity.class);
-                }else if (0 == i){
+                } else if (0 == i) {
                     ActivityUtils.startActivity(getContext(), ShareQRcodeActivity.class);
-                }else if (4 == i){
+                } else if (4 == i) {
                     ActivityUtils.startActivity(getContext(), ShareQRcodeActivity.class);
-                }else {
+                } else {
                     ToastUtils.showLong("功能陆续开放中");
                 }
             }
@@ -246,11 +253,9 @@ public class HomeFragment extends BaseFragment {
         //banner
         initBanner();
 
-        String userName = SPUtils.getInstance().getString("username");
-        if (!TextUtils.isEmpty(userName)) {
-            nickName.setText(userName);
-        }
         initData();
+
+        updateUser();
 
         //融云初始化
         RongUtils.initRongChat(getContext());
@@ -275,6 +280,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
+        updateUser();
         //开始自动翻页
         convenientBanner.startTurning(3000);
         convenientBanner.setCanLoop(true);
@@ -302,7 +308,7 @@ public class HomeFragment extends BaseFragment {
             adsImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    WebViewActivity.start(getContext(),"活动详情","https://www.baidu.com");
+                    WebViewActivity.start(getContext(), "活动详情", "https://www.baidu.com");
                 }
             });
             Glide.with(getContext()).load((String) data).into(adsImageView);

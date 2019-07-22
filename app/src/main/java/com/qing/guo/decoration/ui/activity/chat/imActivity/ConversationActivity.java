@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import com.fkh.support.ui.widget.TitleView;
 import com.qing.guo.decoration.R;
 import com.qing.guo.decoration.application.QingguoApplication;
 
@@ -23,6 +24,7 @@ public class ConversationActivity extends FragmentActivity {
     private String mTargetId,title;
 
     boolean isFromPush = false;
+    private TitleView titleView;
 
     /**
      * 会话类型
@@ -38,6 +40,8 @@ public class ConversationActivity extends FragmentActivity {
         Intent intent = getIntent();
         getIntentDate(intent);
         isReconnect(intent);
+        titleView = findViewById(R.id.titleView);
+        titleView.setTitleText(title);
     }
 
 
@@ -47,7 +51,7 @@ public class ConversationActivity extends FragmentActivity {
     private void getIntentDate(Intent intent) {
         mTargetId = intent.getData().getQueryParameter("targetId");
         title = intent.getData().getQueryParameter("title");
-        Toast.makeText(this, title+"<<<会话ID>>>>>>>>>" + mTargetId, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, title+"<<<会话ID>>>>>>>>>" + mTargetId, Toast.LENGTH_SHORT).show();
 
         //intent.getData().getLastPathSegment();//获得当前会话类型
         mConversationType = Conversation.ConversationType.valueOf(intent.getData().getLastPathSegment().toUpperCase(Locale.getDefault()));

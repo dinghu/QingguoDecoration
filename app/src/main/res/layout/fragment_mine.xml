@@ -7,9 +7,9 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:visibility="visible">
@@ -106,21 +106,22 @@
             android:background="@color/line_color" />
 
         <com.fkh.support.ui.widget.KeyValueView
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:kvkey="我的裂变数据"
             app:kvrightImage="@drawable/icon_more"
             app:kvtextPreImage="@drawable/icon_me_2" />
 
         <View
-            android:visibility="gone"
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/line_color" />
+            android:layout_marginLeft="16dp"
+            android:background="@color/line_color"
+            android:visibility="gone" />
 
         <com.fkh.support.ui.widget.KeyValueView
+            android:id="@+id/mynews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:kvkey="消息"
@@ -128,14 +129,69 @@
             app:kvtextPreImage="@drawable/icon_me_1" />
 
         <View
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
             android:background="@color/line_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingTop="13dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="13dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivPreIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_me_3"
+                    app:riv_border_width="0dip"
+                    app:riv_corner_radius="100dip" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ivPreIcon"
+                    android:gravity="center_vertical"
+                    android:text="消息免打扰"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+
+            <com.fkh.support.ui.widget.CheckView
+                android:id="@+id/checkView1"
+                android:layout_width="50dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ivRightImage" />
+
+            <ImageView
+                android:id="@+id/ivRightImage"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
 
         <com.fkh.support.ui.widget.KeyValueView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:kvkey="消息免打扰"
             app:kvrightImage="@drawable/icon_more"
             app:kvtextPreImage="@drawable/icon_me_3" />
@@ -156,21 +212,22 @@
             android:background="@color/line_color" />
 
         <com.fkh.support.ui.widget.KeyValueView
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:kvkey="登录电脑版"
             app:kvrightImage="@drawable/icon_more"
             app:kvtextPreImage="@drawable/icon_me_4" />
 
         <View
-            android:visibility="gone"
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/line_color" />
+            android:layout_marginLeft="16dp"
+            android:background="@color/line_color"
+            android:visibility="gone" />
 
         <com.fkh.support.ui.widget.KeyValueView
+            android:id="@+id/kefuphone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:kvkey="联系客服"
@@ -178,24 +235,24 @@
             app:kvtextPreImage="@drawable/icon_me_7" />
 
         <View
-            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
             android:background="@color/line_color" />
 
         <com.fkh.support.ui.widget.KeyValueView
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:kvkey="装企营销宝典"
             app:kvrightImage="@drawable/icon_more"
             app:kvtextPreImage="@drawable/icon_me_6" />
 
         <View
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/line_color" />
+            android:background="@color/line_color"
+            android:visibility="gone" />
 
         <View
             android:layout_width="match_parent"

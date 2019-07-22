@@ -26,38 +26,45 @@ import io.rong.imlib.model.UserInfo;
  */
 public class RongUtils {
 
+    public static final String rongYunAvatar = "http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png";
+
     public static void initRongChat(final Context context) {
         String userName = SPUtils.getInstance().getString("username");
         String userid = SPUtils.getInstance().getString("userid");
         String userAvatar = SPUtils.getInstance().getString("userAvatar");
         String rongToken = SPUtils.getInstance().getString("rongToken");
-        if (!TextUtils.isEmpty(userName)) {
-            setUserInfoProvider(userName, userid, userAvatar);
-        }
-        if (TextUtils.isEmpty(rongToken)) {
-            Map<String,String> map = new HashMap<>();
-            map.put("name",userName);
-            map.put("userId",userid);
-            map.put("userAvatar",userAvatar);
-            ImServiceImpl.getRongtoken(map, new ResponseListener<RongTokenResp>() {
-                @Override
-                public void onSuccess(RongTokenResp rongTokenResp) {
-                    SPUtils.getInstance().put("rongToken", rongTokenResp.getToken());
-                    //连接到服务器
-                    connect(context, rongTokenResp.getToken());
-                    addTestUserSupport(context);
-                }
+        if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(userid)) {
 
-                @Override
-                public void onFail(String code, String message) {
-                    ToastUtils.showLong(message);
-                }
-            });
-        } else {
-            //连接到服务器
-            connect(context, rongToken);
-            addTestUserSupport(context);
+            userAvatar = TextUtils.isEmpty(userAvatar)? rongYunAvatar:userAvatar;
+
+            setUserInfoProvider(userName, userid, userAvatar);
+
+            if (TextUtils.isEmpty(rongToken)) {
+                Map<String, String> map = new HashMap<>();
+                map.put("name", userName);
+                map.put("userId", userid);
+                map.put("userAvatar", userAvatar);
+                ImServiceImpl.getRongtoken(map, new ResponseListener<RongTokenResp>() {
+                    @Override
+                    public void onSuccess(RongTokenResp rongTokenResp) {
+                        SPUtils.getInstance().put("rongToken", rongTokenResp.getToken());
+                        //连接到服务器
+                        connect(context, rongTokenResp.getToken());
+                        addTestUserSupport(context);
+                    }
+
+                    @Override
+                    public void onFail(String code, String message) {
+                        ToastUtils.showLong(message);
+                    }
+                });
+            } else {
+                //连接到服务器
+                connect(context, rongToken);
+                addTestUserSupport(context);
+            }
         }
+
 
     }
 
@@ -94,7 +101,7 @@ public class RongUtils {
     }
 
     public static User getSupportUser() {
-        return new User("myzTestAccount", "测试用户", "http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png");
+        return new User("myzTestAccount", "测试用户", rongYunAvatar);
     }
 
     public static RongTokenReq userToRongTokenReq(User user) {
@@ -105,17 +112,17 @@ public class RongUtils {
         return rongTokenReq;
     }
 
-    public static Map<String,String> userToRongTokenMap(User user) {
-        Map<String,String> map = new HashMap<>();
-        map.put("name",user.name);
-        map.put("userId",user.userId);
-        map.put("userAvatar",user.portraitUri);
+    public static Map<String, String> userToRongTokenMap(User user) {
+        Map<String, String> map = new HashMap<>();
+        map.put("name", user.name);
+        map.put("userId", user.userId);
+        map.put("userAvatar", user.portraitUri);
         return map;
     }
 
     public static void addTestUserSupport(final Context context) {
 
-        Map<String,String> rongTokenReq = userToRongTokenMap(getSupportUser());
+        Map<String, String> rongTokenReq = userToRongTokenMap(getSupportUser());
 
         ImServiceImpl.getRongtoken(rongTokenReq, new ResponseListener<RongTokenResp>() {
             @Override

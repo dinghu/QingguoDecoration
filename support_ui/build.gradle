@@ -27,4 +27,5 @@ dependencies {
     api 'com.makeramen:roundedimageview:2.3.0'
     // 上下拉加载 listview
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    api 'com.lovedise:permissiongen:0.0.6'
 }

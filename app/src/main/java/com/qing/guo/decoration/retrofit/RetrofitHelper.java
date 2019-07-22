@@ -5,29 +5,21 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.baidu.platform.domain.HttpsEnable;
-import com.blankj.utilcode.util.EncryptUtils;
 import com.qing.guo.decoration.Constant.UrlConstant;
-import com.qing.guo.decoration.Hex;
 import com.qing.guo.decoration.SHA1;
 import com.qing.guo.decoration.retrofit.interceptor.HeaderInterceptor;
 import com.qing.guo.decoration.retrofit.interceptor.HttpLoggingInterceptor;
 import com.qing.guo.decoration.service.ApiService;
 import com.qing.guo.decoration.service.ImService;
-import com.sina.weibo.sdk.exception.WeiboAuthException;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.ResponseBody;
-import okio.Buffer;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

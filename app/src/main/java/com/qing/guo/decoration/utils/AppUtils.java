@@ -1,10 +1,12 @@
 package com.qing.guo.decoration.utils;
 
+import android.content.Context;
 import android.text.TextUtils;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.qing.guo.decoration.Constant.UrlConstant;
+import com.qing.guo.decoration.ui.activity.LoginActivity;
 
 public class AppUtils {
 
@@ -54,4 +56,5 @@ public class AppUtils {
                 "}" +
                 "})()");
     }
+
 }

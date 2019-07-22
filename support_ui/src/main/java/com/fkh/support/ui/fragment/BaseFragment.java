@@ -11,9 +11,12 @@ import android.view.ViewGroup;
 import com.fkh.support.ui.dialog.LoadDialog;
 import com.fkh.support.ui.widget.TitleView;
 
+import java.security.Permission;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import kr.co.namee.permissiongen.PermissionGen;
 
 public abstract class BaseFragment extends Fragment {
     protected abstract int getLayoutId();
@@ -32,6 +35,12 @@ public abstract class BaseFragment extends Fragment {
         unBinder = ButterKnife.bind(this, view);
         initView(view);
         return view;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionGen.onRequestPermissionsResult(this,requestCode,permissions,grantResults);
     }
 
     @Override

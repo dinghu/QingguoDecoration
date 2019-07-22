@@ -67,8 +67,8 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.weichat)
     public void onViewClicked() {
-        SPUtils.getInstance().put("username", "丁虎");
-        SPUtils.getInstance().put("userid", "dinghu");
+        SPUtils.getInstance().put("username", "测试账号");
+        SPUtils.getInstance().put("userid", "ceshizhanghao");
         //融云初始化
         RongUtils.initRongChat(this);
         finish();
@@ -85,7 +85,6 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void loginFailure(Exception e) {
                 ToastUtils.showLong(e.getMessage());
-                SPUtils.getInstance().put("username", "丁虎");
                 finish();
             }
 

@@ -9,6 +9,7 @@ import com.fkh.support.ui.widget.TitleView;
 import com.qing.guo.decoration.R;
 import com.qing.guo.decoration.ui.activity.chat.ChatContractActivity;
 import com.qing.guo.decoration.utils.ActivityUtils;
+import com.qing.guo.decoration.utils.UserUtils;
 
 import butterknife.BindView;
 import io.rong.imkit.RongIM;
@@ -30,7 +31,12 @@ public class ChatFragment extends BaseFragment {
         titleView.setOnClickRightListener(new TitleView.OnClickRightListener() {
             @Override
             public void onClick(View v) {
-                ActivityUtils.startActivity(getContext(),ChatContractActivity.class);
+                if (UserUtils.isLogin()){
+                    ActivityUtils.startActivity(getContext(),ChatContractActivity.class);
+                }else {
+                    UserUtils.reqLogin(getContext());
+                }
+
             }
         });
         enterFragment();

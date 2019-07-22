@@ -30,6 +30,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -106,6 +107,8 @@
         <activity android:name=".ui.activity.HouseListActivity"/>
 
         <activity android:name=".ui.activity.ShareQRcodeActivity"/>
+
+        <activity android:name=".ui.activity.SystemNewsListActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

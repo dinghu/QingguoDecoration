@@ -80,10 +80,9 @@ dependencies {
 
     // 工具库
     implementation 'com.blankj:utilcode:1.24.7'
-    implementation 'com.lovedise:permissiongen:0.0.6'
+//    implementation 'com.lovedise:permissiongen:0.0.6'
     implementation 'com.hyman:flowlayout-lib:1.1.2'
     implementation project(':support_ui')
-    implementation files('libs/BaiduLBS_Android.jar')
 
     // 二维码
     implementation 'com.github.maning0303:MNZXingCode:V2.0.1'

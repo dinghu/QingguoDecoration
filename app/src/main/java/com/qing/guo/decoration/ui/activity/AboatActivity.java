@@ -10,8 +10,8 @@ import butterknife.BindView;
 
 public class AboatActivity extends BaseActivity {
 
-    @BindView(R.id.version)
-    TextView version;
+    @BindView(R.id.versionText)
+    TextView versionText;
 
     @Override
     protected int getLayout() {
@@ -20,7 +20,7 @@ public class AboatActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        version.setText(AppUtils.getAppVersionCode());
+        versionText.setText(AppUtils.getAppVersionName());
     }
 
 
