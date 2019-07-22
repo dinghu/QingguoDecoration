@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fkh.support.ui.dialog.LoadDialog;
+import com.fkh.support.ui.widget.TitleView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -20,6 +22,7 @@ public abstract class BaseFragment extends Fragment {
 
     private Unbinder unBinder;
     private LoadDialog mLoadDialog;
+
 
 
     @Nullable

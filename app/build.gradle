@@ -55,8 +55,11 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
+
     // 注解
+
     //    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+
     //    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
@@ -68,10 +71,13 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.bigkoo:convenientbanner:2.0.5'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
     // 上下拉加载 listview
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
-//    implementation 'me.shaohui.shareutil:shareutil:1.3.8'
-    api 'me.shaohui.shareutil:shareutil:1.3.8'
+
+    //    implementation 'me.shaohui.shareutil:shareutil:1.3.8'
+    implementation 'me.shaohui.shareutil:shareutil:1.3.8'
+
     // 工具库
     implementation 'com.blankj:utilcode:1.24.7'
     implementation 'com.lovedise:permissiongen:0.0.6'
@@ -79,19 +85,37 @@ dependencies {
     implementation project(':support_ui')
     implementation files('libs/BaiduLBS_Android.jar')
 
-//    // 添加依赖。注意，版本号必须一致。
-//    // 基础功能 (必需)
-//    implementation 'com.netease.nimlib:basesdk:6.1.1'
-//    // 音视频和互动白板服务需要
-//    implementation 'com.netease.nimlib:nrtc:6.1.1'
-//    // 音视频需要
-//    implementation 'com.netease.nimlib:avchat:6.1.1'
-//    // 聊天室需要
-//    implementation 'com.netease.nimlib:chatroom:6.1.1'
-//    // 互动白板服务需要
-//    implementation 'com.netease.nimlib:rts:6.1.1'
-//    // 全文检索服务需要
-//    implementation 'com.netease.nimlib:lucene:6.1.1'
-//    // 小米、华为、魅族、fcm 推送
-//    implementation 'com.netease.nimlib:push:6.1.1'
+    // 二维码
+    implementation 'com.github.maning0303:MNZXingCode:V2.0.1'
+    implementation project(':IMKit')
+
+    //    // 添加依赖。注意，版本号必须一致。
+
+    //    // 基础功能 (必需)
+
+    //    implementation 'com.netease.nimlib:basesdk:6.1.1'
+
+    //    // 音视频和互动白板服务需要
+
+    //    implementation 'com.netease.nimlib:nrtc:6.1.1'
+
+    //    // 音视频需要
+
+    //    implementation 'com.netease.nimlib:avchat:6.1.1'
+
+    //    // 聊天室需要
+
+    //    implementation 'com.netease.nimlib:chatroom:6.1.1'
+
+    //    // 互动白板服务需要
+
+    //    implementation 'com.netease.nimlib:rts:6.1.1'
+
+    //    // 全文检索服务需要
+
+    //    implementation 'com.netease.nimlib:lucene:6.1.1'
+
+    //    // 小米、华为、魅族、fcm 推送
+
+    //    implementation 'com.netease.nimlib:push:6.1.1'
 }

@@ -1,2 +1,2 @@
-include ':app',':support_ui'
+include ':app', ':support_ui', ':CallKit', ':IMKit', ':CallLib', ':IMLib'
 

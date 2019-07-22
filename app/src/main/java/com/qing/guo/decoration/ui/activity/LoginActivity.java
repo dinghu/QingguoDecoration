@@ -10,6 +10,7 @@ import com.qing.guo.decoration.R;
 import com.qing.guo.decoration.entity.resp.BaseResp;
 import com.qing.guo.decoration.retrofit.ResponseListener;
 import com.qing.guo.decoration.service.impl.ApiServiceImpl;
+import com.qing.guo.decoration.utils.RongUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -67,11 +68,15 @@ public class LoginActivity extends BaseActivity {
     @OnClick(R.id.weichat)
     public void onViewClicked() {
         SPUtils.getInstance().put("username", "丁虎");
+        SPUtils.getInstance().put("userid", "dinghu");
+        //融云初始化
+        RongUtils.initRongChat(this);
         finish();
         LoginUtil.login(LoginActivity.this, LoginPlatform.WX, new LoginListener() {
             @Override
             public void loginSuccess(LoginResult result) {
 //                saveUser(result);
+                SPUtils.getInstance().put("userid", result.getUserInfo().getOpenId());
                 SPUtils.getInstance().put("username", result.getUserInfo().getNickname());
                 SPUtils.getInstance().put("userAvatar", result.getUserInfo().getHeadImageUrl());
                 finish();

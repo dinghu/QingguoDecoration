@@ -90,9 +90,7 @@ public class TitleView extends RelativeLayout {
         ivBack.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mListener != null) {
-                    ((Activity) context).onBackPressed();
-                }
+                ((Activity) context).onBackPressed();
             }
         });
     }

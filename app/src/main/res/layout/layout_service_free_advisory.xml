@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fkh.support.ui.widget.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="免费咨询" />
+
+    <View android:layout_width="match_parent"
+          android:layout_height="20dp"
+          android:background="@color/drive_item"/>
+
+    <EditText
+            android:id="@+id/advisoryName"
+            android:hint="您的名字"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <EditText
+            android:id="@+id/advisoryPhone"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <Button
+            android:id="@+id/submit"
+            android:text="提交"
+            style="@style/ButtonStyle"/>
+</LinearLayout>

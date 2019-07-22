@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fkh.support.ui.widget.TitleView
+        android:id="@+id/titleView"
+        app:titleText="装修报价"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View android:layout_width="match_parent"
+          android:layout_height="20dp"
+          android:background="@color/drive_item"/>
+
+    <EditText
+            android:id="@+id/offerName"
+            android:hint="您的名字"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <EditText
+            android:id="@+id/offerPhone"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <EditText
+            android:id="@+id/address"
+            android:hint="请输入房屋面积"
+            android:inputType="numberDecimal"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            style="@style/ServiceInputStyle">
+
+        <EditText
+                android:id="@+id/shi"
+                android:hint="0"
+                android:maxLength="1"
+                android:layout_width="wrap_content"
+                android:inputType="numberDecimal"
+                style="@style/ServiceInputStyle"/>
+
+        <TextView
+                android:text="室"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <EditText
+                android:id="@+id/ting"
+                android:hint="0"
+                android:maxLength="1"
+                android:layout_width="wrap_content"
+                android:inputType="numberDecimal"
+                style="@style/ServiceInputStyle"/>
+
+        <TextView
+                android:text="厅"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <EditText
+                android:id="@+id/chu"
+                android:hint="0"
+                android:maxLength="1"
+                android:layout_width="wrap_content"
+                android:inputType="numberDecimal"
+                style="@style/ServiceInputStyle"/>
+
+        <TextView
+                android:text="厨"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <EditText
+                android:hint="0"
+                android:maxLength="1"
+                android:layout_width="wrap_content"
+                android:inputType="numberDecimal"
+                style="@style/ServiceInputStyle"/>
+
+        <TextView
+                android:id="@+id/wei"
+                android:text="卫"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <Button
+            android:id="@+id/getPriceBtn"
+            android:text="获取报价"
+            style="@style/ButtonStyle"/>
+</LinearLayout>

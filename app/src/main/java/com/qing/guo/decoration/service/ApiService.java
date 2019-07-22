@@ -28,6 +28,7 @@ import retrofit2.http.Query;
  */
 public interface ApiService {
 
+    @FormUrlEncoded
     @POST("app/offer/save")
     Call<BaseResp> offerSave(@FieldMap Map<String, String> map);
 
@@ -68,6 +69,7 @@ public interface ApiService {
     @POST("app/oprationdynamic/list")
     Call<ListResp<Oprationdynamic>> getOprationdynamicList();
 
+    @FormUrlEncoded
     @POST("app/user/save")
     Call<BaseResp> saveUser(@FieldMap Map<String, String> map);
 }

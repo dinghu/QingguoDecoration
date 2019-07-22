@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fkh.support.ui.widget.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="售后服务" />
+
+    <View android:layout_width="match_parent"
+          android:layout_height="20dp"
+          android:background="@color/drive_item"/>
+
+    <EditText
+            android:id="@+id/salesName"
+            android:hint="您的名字"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <EditText
+            android:id="@+id/salesPhone"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <EditText
+            android:id="@+id/question"
+            android:hint="请简述您的问题"
+            android:inputType="numberDecimal"
+            style="@style/ServiceInputStyle"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/drive_line"/>
+
+    <Button
+            android:id="@+id/serviceBtn"
+            android:text="预约服务"
+            style="@style/ButtonStyle"/>
+</LinearLayout>
