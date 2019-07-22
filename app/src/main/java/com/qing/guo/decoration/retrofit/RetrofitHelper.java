@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.qing.guo.decoration.Constant.UrlConstant;
-import com.qing.guo.decoration.SHA1;
+import com.qing.guo.decoration.utils.SHA1;
 import com.qing.guo.decoration.retrofit.interceptor.HeaderInterceptor;
 import com.qing.guo.decoration.retrofit.interceptor.HttpLoggingInterceptor;
 import com.qing.guo.decoration.service.ApiService;

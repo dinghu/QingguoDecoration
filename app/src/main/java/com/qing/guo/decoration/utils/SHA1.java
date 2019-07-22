@@ -1,4 +1,4 @@
-package com.qing.guo.decoration;
+package com.qing.guo.decoration.utils;
 
 import java.security.MessageDigest;
 
