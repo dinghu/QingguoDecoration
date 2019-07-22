@@ -3,7 +3,6 @@ package com.qing.guo.decoration.ui.activity;
 import android.Manifest;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +25,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
@@ -34,7 +32,6 @@ import kr.co.namee.permissiongen.PermissionSuccess;
 import me.shaohui.shareutil.ShareUtil;
 import me.shaohui.shareutil.share.ShareListener;
 import me.shaohui.shareutil.share.SharePlatform;
-import me.shaohui.shareutil.share.instance.WxShareInstance;
 
 /**
  * Created by dinghu on 2019/7/22.

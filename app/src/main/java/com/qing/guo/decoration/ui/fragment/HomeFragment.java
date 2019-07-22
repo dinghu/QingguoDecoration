@@ -217,6 +217,8 @@ public class HomeFragment extends BaseFragment {
                     ActivityUtils.startActivity(getContext(), HouseListActivity.class);
                 }else if (0 == i){
                     ActivityUtils.startActivity(getContext(), ShareQRcodeActivity.class);
+                }else if (4 == i){
+                    ActivityUtils.startActivity(getContext(), ShareQRcodeActivity.class);
                 }else {
                     ToastUtils.showLong("功能陆续开放中");
                 }

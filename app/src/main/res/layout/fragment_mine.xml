@@ -106,6 +106,7 @@
             android:background="@color/line_color" />
 
         <com.fkh.support.ui.widget.KeyValueView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:kvkey="我的裂变数据"
@@ -113,6 +114,7 @@
             app:kvtextPreImage="@drawable/icon_me_2" />
 
         <View
+            android:visibility="gone"
             android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
@@ -154,6 +156,7 @@
             android:background="@color/line_color" />
 
         <com.fkh.support.ui.widget.KeyValueView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:kvkey="登录电脑版"
@@ -161,6 +164,7 @@
             app:kvtextPreImage="@drawable/icon_me_4" />
 
         <View
+            android:visibility="gone"
             android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
@@ -180,6 +184,7 @@
             android:background="@color/line_color" />
 
         <com.fkh.support.ui.widget.KeyValueView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:kvkey="装企营销宝典"
@@ -187,6 +192,7 @@
             app:kvtextPreImage="@drawable/icon_me_6" />
 
         <View
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/line_color" />
