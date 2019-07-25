@@ -41,8 +41,8 @@ public class ApiServiceImpl {
         RetrofitHelper.sendRequest(apiService.getHouseList(), responseListener);
     }
 
-    public static void getSiteList(final ResponseListener<ListResp<Site>> responseListener) {
-        RetrofitHelper.sendRequest(apiService.getSiteList(), responseListener);
+    public static void getSiteList(Map<String, String> params, final ResponseListener<ListResp<Site>> responseListener) {
+        RetrofitHelper.sendRequest(apiService.getSiteList(params), responseListener);
     }
 
 

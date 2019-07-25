@@ -25,7 +25,9 @@ import com.qing.guo.decoration.utils.AppUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -113,7 +115,8 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
 
     @Override
     public void getData(int page, boolean isRefreh) {
-        ApiServiceImpl.getSiteList(new ResponseListener<ListResp<Site>>() {
+        Map<String, String> params = new HashMap<>();
+        ApiServiceImpl.getSiteList(params,new ResponseListener<ListResp<Site>>() {
             @Override
             public void onSuccess(ListResp<Site> siteListResp) {
                 dealDataRecive(siteListResp.list, true);

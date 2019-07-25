@@ -44,8 +44,9 @@ public interface ApiService {
     @POST("app/house/list")
     Call<ListResp<House>> getHouseList();
 
+    @FormUrlEncoded
     @POST("app/opration/list")
-    Call<ListResp<Site>> getSiteList();
+    Call<ListResp<Site>> getSiteList(@FieldMap Map<String, String> map);
 
     @POST("app/opration/get")
     Call<DataResp<SiteDetail>> getSiteDetail(@Query("id") String id);
