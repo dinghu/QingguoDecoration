@@ -108,7 +108,6 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
     public void initializeViews(int position, Site site, ViewHolder viewHolder) {
         viewHolder.title.setText(site.getTitle());
         viewHolder.location.setText(site.getHousename() + " / " + site.getProvince() + site.getCity() + site.getDistrict());
-//        viewHolder.info.setText();
         Glide.with(this).load(AppUtils.getImageUrl(site.getImg())).into(viewHolder.image);
     }
 
