@@ -67,18 +67,19 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.weichat)
     public void onViewClicked() {
-        SPUtils.getInstance().put("username", "测试账号");
-        SPUtils.getInstance().put("userid", "ceshizhanghao");
-        //融云初始化
-        RongUtils.initRongChat(this);
-        finish();
+//        SPUtils.getInstance().put("username", "测试账号");
+//        SPUtils.getInstance().put("userid", "ceshizhanghao");
+
         LoginUtil.login(LoginActivity.this, LoginPlatform.WX, new LoginListener() {
             @Override
             public void loginSuccess(LoginResult result) {
 //                saveUser(result);
+                ToastUtils.showLong("登录成功");
                 SPUtils.getInstance().put("userid", result.getUserInfo().getOpenId());
                 SPUtils.getInstance().put("username", result.getUserInfo().getNickname());
                 SPUtils.getInstance().put("userAvatar", result.getUserInfo().getHeadImageUrl());
+                //融云初始化
+                RongUtils.initRongChat(getApplicationContext());
                 finish();
             }
 

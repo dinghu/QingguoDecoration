@@ -25,7 +25,7 @@ public class QingguoApplication extends Application {
                 .weiboId("59232439")
                 // 下面两个，如果不需要登录功能，可不填写
                 .weiboRedirectUrl("https://api.weibo.com/oauth2/default.html")
-                .wxSecret("03430ced0458997a2b068556f89caa61");
+                .wxSecret("584256a7ae56287a5a842235ff40a0b8");
         ShareManager.init(config);
     }
 

@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.bumptech.glide.Glide;
 import com.fkh.support.ui.fragment.BaseFragment;
 import com.fkh.support.ui.widget.CheckView;
 import com.fkh.support.ui.widget.KeyValueView;
@@ -25,6 +26,7 @@ import com.qing.guo.decoration.ui.activity.AboatActivity;
 import com.qing.guo.decoration.ui.activity.LoginActivity;
 import com.qing.guo.decoration.ui.activity.SystemNewsListActivity;
 import com.qing.guo.decoration.utils.ActivityUtils;
+import com.qing.guo.decoration.utils.AppUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -73,8 +75,10 @@ public class MineFragment extends BaseFragment {
 
     private void updateUser() {
         String userName = SPUtils.getInstance().getString("username");
+        String userAvatar = SPUtils.getInstance().getString("userAvatar");
         if (!TextUtils.isEmpty(userName)) {
             MineFragment.this.userName.setText(userName);
+            Glide.with(this).load(AppUtils.getImageUrl(userAvatar)).into(head);
         }
     }
 
