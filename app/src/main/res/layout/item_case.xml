@@ -19,6 +19,7 @@
         app:riv_corner_radius="5dip" />
 
     <TextView
+        android:id="@+id/scan_num"
         android:layout_marginLeft="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +27,22 @@
         android:padding="3dp"
         tools:text="浏览1" />
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_toRightOf="@+id/lable"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="样板工地：海伦天路装修工程" />
+
     <include
+        android:visibility="gone"
         layout="@layout/common_divide_line"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
@@ -34,6 +50,7 @@
         android:layout_marginBottom="10dp" />
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
