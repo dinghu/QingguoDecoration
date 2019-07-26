@@ -17,6 +17,6 @@
     <string name="community">小区</string>
     <string name="decoration_style">装修风格</string>
     <string name="decoration_stage">装修阶段</string>
-    <string name="sort_intelligent">智能排序</string>
+    <string name="sort_intelligent">施工进度</string>
     <string name="sort_most_popular">人气最高</string>
 </resources>
