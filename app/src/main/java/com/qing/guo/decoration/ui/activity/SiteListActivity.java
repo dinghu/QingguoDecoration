@@ -2,8 +2,10 @@ package com.qing.guo.decoration.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -64,6 +66,11 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
     @BindView(R.id.noDataView)
     TextView noDataView;
     List<Site> mDatas = new ArrayList<>();
+    String keyword;
+    @BindView(R.id.search_value)
+    EditText searchValue;
+    @BindView(R.id.search)
+    TextView search;
 
 
     @Override
@@ -118,6 +125,21 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
     @Override
     public void getData(int page, boolean isRefreh) {
         Map<String, String> params = new HashMap<>();
+        if (!TextUtils.isEmpty(keyword)) {
+            params.put("keyword", keyword);
+        }
+//        if (!TextUtils.isEmpty(communityTv.getText().toString())){
+//            params.put("keyword",keyword);
+//        }
+        if (!TextUtils.isEmpty(styleTv.getText().toString())) {
+            params.put("type", styleTv.getText().toString());
+        }
+        if (!TextUtils.isEmpty(sortTv.getText().toString())) {
+            params.put("rate", sortTv.getText().toString());
+        }
+        if (!TextUtils.isEmpty(stageTv.getText().toString())) {
+            params.put("capital", stageTv.getText().toString());
+        }
         ApiServiceImpl.getSiteList(params, new ResponseListener<ListResp<Site>>() {
             @Override
             public void onSuccess(ListResp<Site> siteListResp) {
@@ -138,16 +160,16 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
         List<String> xiaoqu1List = new ArrayList<>();
         List<String> xiaoqu2List = new ArrayList<>();
         List<String> xiaoqu3List = new ArrayList<>();
-        xiaoqu1List.add("小区1");
-        xiaoqu1List.add("小区2");
-        xiaoqu1List.add("小区3");
+        xiaoqu1List.add("1");
+        xiaoqu1List.add("2");
+        xiaoqu1List.add("3");
 
-        xiaoqu2List.add("小区4");
-        xiaoqu2List.add("小区5");
-        xiaoqu2List.add("小区6");
+        xiaoqu2List.add("4");
+        xiaoqu2List.add("5");
+        xiaoqu2List.add("6");
 
-        xiaoqu3List.add("小区7");
-        xiaoqu3List.add("小区8");
+        xiaoqu3List.add("7");
+        xiaoqu3List.add("8");
         allList.add("全部");
         allList.addAll(xiaoqu1List);
         allList.addAll(xiaoqu2List);
@@ -159,6 +181,19 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
         linkedHashMap.put("朝阳区", xiaoqu3List);
         SecondaryListSelectDialog secondaryListSelectDialog = new SecondaryListSelectDialog(this, linkedHashMap);
         secondaryListSelectDialog.show();
+        secondaryListSelectDialog.setOnSecondaryListSelectListener(new SecondaryListSelectDialog.OnSecondaryListSelectListener<String, String>() {
+            @Override
+            public void onSelect(String item1) {
+                communityTv.setText(item1);
+                refreshData();
+            }
+
+            @Override
+            public void onSelect(String item1, String item2) {
+                communityTv.setText(item2);
+                refreshData();
+            }
+        });
     }
 
     @OnClick(R.id.styleLayout)
@@ -170,7 +205,8 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
         ListSelectDialog<String> listSelectDialog = new ListSelectDialog<>(this, styles, new ListSelectDialog.OnItemSelectListener<String>() {
             @Override
             public void onSelect(String item) {
-
+                styleTv.setText(item);
+                refreshData();
             }
         });
         listSelectDialog.show();
@@ -185,7 +221,8 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
         ListSelectDialog<String> listSelectDialog = new ListSelectDialog<>(this, styles, new ListSelectDialog.OnItemSelectListener<String>() {
             @Override
             public void onSelect(String item) {
-
+                stageTv.setText(item);
+                refreshData();
             }
         });
         listSelectDialog.show();
@@ -200,10 +237,16 @@ public class SiteListActivity extends RefreshLoadListViewActivity<Site, SiteList
         ListSelectDialog<String> listSelectDialog = new ListSelectDialog<>(this, styles, new ListSelectDialog.OnItemSelectListener<String>() {
             @Override
             public void onSelect(String item) {
-
+                sortTv.setText(item);
+                refreshData();
             }
         });
         listSelectDialog.show();
+    }
+
+    @OnClick(R.id.search)
+    public void onSearchClicked() {
+        refreshData();
     }
 
     static class ViewHolder {

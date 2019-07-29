@@ -36,6 +36,15 @@ public abstract class RefreshLoadListViewActivity<T,ViewHolder> extends RefreshL
     }
 
     @Override
+    public void refreshData() {
+        //选中第一行
+        if (adapter.getCount() != 0 || (mData != null && !mData.isEmpty())) {
+            listView.setSelection(0);
+        }
+        super.refreshData();
+    }
+
+    @Override
     public void dealError(String message) {
         super.dealError(message);
     }

@@ -59,6 +59,22 @@ public abstract class RefreshLoadActivity<T> extends BaseActivity {
         notifyDataSetChanged(noMoreData);
     }
 
+    public void refreshData() {
+        swipeRefreshLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                if (noData != null) {
+                    noData.setVisibility(View.GONE);
+                }
+//                mLastLoadingTime = System.currentTimeMillis();
+//                swipeRefreshLayout.setLoadMoreEnable(false);
+                page = 1;
+                swipeRefreshLayout.autoRefresh();
+            }
+        });
+
+    }
+
 
     public void notifyDataSetChanged(boolean noMoreData) {
         if (mData != null && !mData.isEmpty()) {

@@ -11,6 +11,46 @@
         android:layout_height="50dp"
         app:titleText="工地管理" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp">
+
+
+        <EditText
+            android:id="@+id/search_value"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/search"
+            android:background="@drawable/corner_5_shape_gray"
+            android:gravity="center_vertical"
+            android:hint="请输入小区名称/施工队名称"
+            android:imeOptions="actionDone"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/corner_5_shape_appskin"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingTop="8dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="8dp"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
     <LinearLayout
         android:visibility="visible"
         android:layout_width="match_parent"

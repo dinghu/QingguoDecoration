@@ -3,6 +3,7 @@ package com.qing.guo.decoration.ui.activity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.EncodeUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.fkh.support.ui.activity.BaseActivity;
@@ -45,16 +46,21 @@ public class LoginActivity extends BaseActivity {
     }
 
 
-    private void saveUser(LoginResult result) {
+    private void saveUser(final LoginResult result) {
         Map<String, String> map = new HashMap<>();
         map.put("openid", result.getToken().getOpenid());
-        BaseUser bu = result.getUserInfo();
-        map.put("username", bu.getNickname());
+        final BaseUser bu = result.getUserInfo();
+        map.put("name", EncodeUtils.urlEncode(bu.getNickname()));
         map.put("headimage", bu.getHeadImageUrl());
         ApiServiceImpl.saveUser(map, new ResponseListener<BaseResp>() {
             @Override
             public void onSuccess(BaseResp baseResp) {
                 ToastUtils.showLong("登录成功");
+                SPUtils.getInstance().put("userid", bu.getOpenId());
+                SPUtils.getInstance().put("username", bu.getNickname());
+                SPUtils.getInstance().put("userAvatar", bu.getHeadImageUrl());
+                //融云初始化
+                RongUtils.initRongChat(getApplicationContext());
                 finish();
             }
 
@@ -73,14 +79,7 @@ public class LoginActivity extends BaseActivity {
         LoginUtil.login(LoginActivity.this, LoginPlatform.WX, new LoginListener() {
             @Override
             public void loginSuccess(LoginResult result) {
-//                saveUser(result);
-                ToastUtils.showLong("登录成功");
-                SPUtils.getInstance().put("userid", result.getUserInfo().getOpenId());
-                SPUtils.getInstance().put("username", result.getUserInfo().getNickname());
-                SPUtils.getInstance().put("userAvatar", result.getUserInfo().getHeadImageUrl());
-                //融云初始化
-                RongUtils.initRongChat(getApplicationContext());
-                finish();
+                saveUser(result);
             }
 
             @Override
